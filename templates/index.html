@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel Booking Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background: white;
+            color: black;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            background: #2a5298;
+            color: white;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1e3c72;
+        }
+
+        .file-input {
+            background: #f5f5f5;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Hotel Booking PDF Generator</h2>
+
+    <form action="/generate" method="post" enctype="multipart/form-data">
+        
+        <input type="text" name="booking_id" placeholder="Booking ID" required>
+        
+        <input type="text" name="guest_name" placeholder="Guest Name" required>
+
+        <input type="date" name="checkin" required>
+        <input type="date" name="checkout" required>
+
+        <input type="text" name="nights" placeholder="Nights (optional)">
+
+        <input type="file" name="file" class="file-input" required>
+
+        <button type="submit">Generate PDF</button>
+
+    </form>
+</div>
+
+</body>
+</html>
